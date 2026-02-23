@@ -1,11 +1,16 @@
+print("-----------------------")
+print("O NÚMERO É PAR OU IMPAR???")
+print("-----------------------")
 
-print("--TAUBAUDA DOS NÚMEROS--")
+rodada = 1
 
-número = int(input("Coloque um número de 1 a 10:"))
+for rodada in range(2):
+    entrada = int(input("Digita um número:"))
 
-print(f"Tabuada do {número}")
-
-
-
-
+    if entrada % 2 == 0:
+        print(f"O número {entrada} é um número par")
+        break
+    else:
+        print(f"Eita!! o número {entrada} é um número impar!")
+        break
 
