@@ -1,26 +1,38 @@
-
 print('------------------------')
 print('\n MERCADINHO DO SEU JOÃO \n')
 print('------------------------')
 
-minha_lista = ['(1)Morango','(2)Laranja','(3)Limão']
+minha_lista = ['(1)Morango','(2)Laranja','(3)Limão','(4)Sair']
 iterador = iter(minha_lista) # Transforma em iterador
 entrada = input("Você deseja comprar no Mercado do seu João? sim ou não?\n")
 
+def compras():
+        print(next(iterador))
+        print(next(iterador))
+        print(next(iterador))
+        print(next(iterador))
+        fechar = False
+
+        while (fechar != True):
+            entrada2 = int(input(""))
+            if entrada2 == 4:
+                print("Aaaah, se vai sair?")
+                fechar = True
+            else: 
+                if entrada2 == 1:
+                    print("Você comprou um Morango, quer mais algo?")
+                if entrada2 == 2:
+                    print("Você comprou um Laranja, quer mais algo?")
+                if entrada2 == 3:
+                    print("Você comprou um Limão, quer mais algo?")
+
 if(entrada == "sim"):
     print("Deus te abençoe, oque deseja?")
-    print(next(iterador))
-    print(next(iterador))
-    print(next(iterador))
-    entrada2 = input("")
-    if(entrada2 == 'Morango'):
-        print('Morango comprado!')
-    if(entrada2 == 'Laranja'):
-        print('Laranja comprada!')
-    if entrada2 == 'Limão':
-        print('Limão comprado')
+    compras()    
 elif(entrada == "não"):
-    print("Aaaaaah que pena :(")
+        print("Aaaaaah que pena :(")
+
+    
 
 
 

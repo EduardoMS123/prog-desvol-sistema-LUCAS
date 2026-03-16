@@ -1,6 +1,7 @@
 import random as rd
 
 def jogar_advinhacao():
+
     print("-------------------------------")
     print("\nBem vindo ao jogo de acerta o número!\n")
     print("-------------------------------")
@@ -61,3 +62,8 @@ def jogar_advinhacao():
         rodada = rodada + 1
         
     print("\nFim de jogo")
+
+
+if(__name__ == "__main__"):
+    jogar_advinhacao()
+
