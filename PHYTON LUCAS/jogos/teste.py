@@ -1,3 +1,9 @@
-palavra = "Olá"
+lista_gulosa = [1, 2, 3, 4]
 
-print(palavra.isascii())
+print(lista_gulosa[1:2:3])
+
+print()
+
+
+
+
