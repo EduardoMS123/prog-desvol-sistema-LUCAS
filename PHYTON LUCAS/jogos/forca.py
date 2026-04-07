@@ -5,7 +5,7 @@ def jogar_forca():
 
     lista = []
 
-    arquivo = open("jogos/palavras.txt", "r")
+    arquivo = open("palavras.txt", "r")
     palavras = []
 
     for linha in palavras:
