@@ -5,11 +5,10 @@ teclado
 memoria
 camera
 site
-placa de video
+placadevideo
 tecnico
 engenheiro
 software
 programas
 tecnologia
 programação
-
