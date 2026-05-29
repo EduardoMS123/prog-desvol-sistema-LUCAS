@@ -1,10 +1,9 @@
 from conta import Conta
 
-conta = Conta(535, "Ricardo", 55.0, 5000.0)
-print(conta)
+conta1 = Conta(535, "Ricardo", 55.0, 1000.0)
+conta2 = Conta(536, "Larissa", 105.0, 1000.0)
 
-conta.extrato()
-conta.sacar(55.0)
-conta.extrato()
+conta1.limite = 2000
+print(conta1.limite)
 
 #WuW WwW WvW WoW WxW; UwU UuU UvU UxU; VuV VvV 

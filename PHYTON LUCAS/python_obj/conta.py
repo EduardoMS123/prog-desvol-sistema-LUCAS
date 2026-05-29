@@ -1,25 +1,68 @@
 class Conta:
     def __init__(self, numero, titular, saldo, limite = 1000.0):
-        self.numero = numero
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
-    
+        self.__numero = numero
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
+
     def extrato(self):
-        print(f"Saldo {self.saldo} do titular {self.titular}")
+        print(f"Saldo: {self.__saldo} do titular {self.__titular}")
 
     def depositar(self, valor):
-        self.saldo += valor
-        print(f"Você depositou {valor}")
+        if(valor < 0):
+            print("Valores negativos não podem ser depositados")
+        else:
+            self.__saldo += valor
 
     def sacar(self, valor):
-        if valor < self.saldo:
-            self.saldo -= valor
-            print(f"Você sacou {valor}")
-        else: 
-            print("Você não pode sacar esse valor")
+        if(self.__saldo < valor):
+            print("Saldo insuficiente")
+        else:
+            self.__saldo -= valor
 
+    def transferir(self, valor, destino):
+        if(self.__saldo < valor) or (valor < 0):
+            print("Não é possível realizar a tranferência")
+        else:
+            self.sacar(valor)
+            destino.depositar(valor)
+    
+    #Método para retornar apenas o valor das propriedades
+    @property
+    def numero(self):
+        return self.__numero
+    
+    @property
+    def titular(self):
+        return self.__titular
+    
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @property
+    def limite(self):
+        return self.__limite
 
+    #Métodos para manipular os valores das propriedades
+    @numero.getter
+    def numero(self):
+        self.__numero
+    
+    @titular.getter
+    def titular(self):
+        self.__titular
+    
+    @saldo.setter
+    def saldo(self, saldo):
+        self.__saldo = saldo
+    
+    @limite.setter
+    def limite(self, limite):
+        self.__limite = limite
 
-
-
+#atributo = o que têm
+#método = o que consegue fazer
+#dentro da classe => método
+# "__" é igual ao private()
+# "__" deixa privado
