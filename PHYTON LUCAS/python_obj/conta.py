@@ -14,11 +14,15 @@ class Conta:
         else:
             self.__saldo += valor
 
+    def __saque_permitido(self, valor_saque):
+        valor_disponivel_saque = self.__saldo + self.__limite
+        return valor_saque <= valor_disponivel_saque
+
     def sacar(self, valor):
-        if(self.__saldo < valor):
-            print("Saldo insuficiente")
-        else:
+        if(self.__saque_permitido(valor)):
             self.__saldo -= valor
+        else:
+            print(f"o valor {valor} ultrapassou o limite")
 
     def transferir(self, valor, destino):
         if(self.__saldo < valor) or (valor < 0):
@@ -43,6 +47,16 @@ class Conta:
     @property
     def limite(self):
         return self.__limite
+    
+    @staticmethod
+    def codigo_banco():
+        return '001'
+    
+    @staticmethod
+    def codigos_bancos():
+        return {'BB': '001',
+                'Caixa': '104',
+                'Bradesco': '237'}
 
     #Métodos para manipular os valores das propriedades
     @numero.getter
