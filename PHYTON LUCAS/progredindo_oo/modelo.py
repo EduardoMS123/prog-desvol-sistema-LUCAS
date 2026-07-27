@@ -27,11 +27,17 @@ class Filmes(Programas):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
+    
+    def imprime(self):
+        print(f"{self.valor_nome} - {self.ano} - {self.duracao} Minutos - {self._curtir} Curtidas\n")
 
 class Series(Programas):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
+
+    def imprime(self):
+        print(f"{self.valor_nome} - {self.ano} - {self.temporadas} Temporadas - {self._curtir} Curtidas\n")
 
 #Instanciar é salvar em uma variável
 
@@ -41,11 +47,13 @@ aventuras_superman.curtida()
 avatar = Filmes("Avatar", 2009, 177)
 
 
+
+
 filmes_series = [aventuras_superman, avatar]
 
 for programas in filmes_series:
-    detalhe = programas.duracao if hasattr(programas, 'duracao') else programas.temporadas
-    print(f"{programas.valor_nome} - {programas.ano} - {detalhe}")
+    programas.imprime()
+    
 
 
 
