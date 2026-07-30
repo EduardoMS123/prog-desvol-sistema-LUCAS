@@ -28,16 +28,16 @@ class Filmes(Programas):
         super().__init__(nome, ano)
         self.duracao = duracao
     
-    def imprime(self):
-        print(f"{self.valor_nome} - {self.ano} - {self.duracao} Minutos - {self._curtir} Curtidas\n")
+    def __str__(self):
+        return f"{self.valor_nome} - {self.ano} - {self.duracao} Minutos - {self._curtir} Curtidas\n"
 
 class Series(Programas):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-    def imprime(self):
-        print(f"{self.valor_nome} - {self.ano} - {self.temporadas} Temporadas - {self._curtir} Curtidas\n")
+    def __str__(self):
+        return f"{self.valor_nome} - {self.ano} - {self.temporadas} Temporadas - {self._curtir} Curtidas\n"
 
 #Instanciar é salvar em uma variável
 
