@@ -41,10 +41,18 @@ class Series(Programas):
 
 
 #nomePL = Nome da Playlist
-class Playlist(list):
+class Playlist():
     def __init__(self, nomePL, elementos):
         self.nomePL = nomePL
-        super().__init__(elementos)
+        self._elementos = elementos
+
+    @property
+    def  listagem(self):
+        return self._elementos
+        
+    @property
+    def tamanho(self):
+        return len(self._elementos)
 
 
 #Instanciar é salvar em uma variável
@@ -79,7 +87,7 @@ casa_coruja.curtida()
 filmes_series = [avatar, chromaticaBall, aventuras_superman, casa_coruja]
 plFim_de_semana = Playlist("Fim de Semana", filmes_series)
 
-print(f"Tamanho da Playlist: {len(plFim_de_semana)}")
+print(f"Tamanho da Playlist: {plFim_de_semana}")
 print(f"Está na lista?{avatar in plFim_de_semana}")
 
 for programas in plFim_de_semana:
