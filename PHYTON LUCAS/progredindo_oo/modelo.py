@@ -50,8 +50,11 @@ class Playlist():
     def  listagem(self):
         return self._elementos
         
-    @property
-    def tamanho(self):
+    
+    def __getitem__(self, item):
+        return self._elementos[item]
+    
+    def __len__(self):
         return len(self._elementos)
 
 
@@ -87,18 +90,25 @@ casa_coruja.curtida()
 filmes_series = [avatar, chromaticaBall, aventuras_superman, casa_coruja]
 plFim_de_semana = Playlist("Fim de Semana", filmes_series)
 
-print(f"Tamanho da Playlist: {plFim_de_semana}")
+#print(f"Tamanho da Playlist: {plFim_de_semana}")
 print(f"Está na lista?{avatar in plFim_de_semana}")
+print(plFim_de_semana[1])
 
-for programas in plFim_de_semana:
-   print(programas)
+#for programas in plFim_de_semana:
+   #print(programas)
     
 
+#Python Data Model
+#Inicialização: __init__
+#Representação: __str__,__repr__
+#Containers/Sequência: __contains__, __iter__,__len__,__getitem__
+#Numéricas: __add__,__sub__,__mul__,__mod__
 
-
-
-
-
+#Python Data Model exemplos
+#Inicialização: obj = Novo()
+#Representação: print(obj),str(obj),repr(obj)
+#Containers/Sequência: len(obj),item in obj, for in obj,obj[2:3]
+#Numéricas: obj+outro_obj, obj*obj
 
 
 
